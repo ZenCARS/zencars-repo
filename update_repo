@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+cd "x86_64/"
+
+rm -v zencars-repo*
+
+
+echo "repo-add"
+repo-add -s --key 8312E0BF317BAADA962A71A8BC47F78670B5E2E9 -v -n -R zencars-repo.db.tar.gz *.pkg.tar.xz
+repo-add -s --key 8312E0BF317BAADA962A71A8BC47F78670B5E2E9 -v -n -R zencars-repo.db.tar.gz *.pkg.tar.zst
+#sleep 8
+cp -vf zencars-repo.db.tar.gz zencars-repo.db
+
+cd ../
+
+echo "####################################"
+echo "Repo Updated!!"
+echo "####################################"

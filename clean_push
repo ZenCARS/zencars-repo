@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cp .git/config . && rm -rfd .git/
+
+git init && mv -f config  .git/
+
+git add --all . && git commit -m "clean repo update" && git push -u origin master --force
+
